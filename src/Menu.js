@@ -1,25 +1,24 @@
-import React from 'react'
 import styled from 'styled-components'
 
-function Menu() {
+function Menu({setTheme}) {
   return (
     <MenuStyled>
         <div className="buttons">
-            <div className="button">
+            <div className="button" onClick={() => setTheme('light')}>
                 <div className="circle light"></div>
-                Light
+                <p className='text-color'>Light</p>
             </div>
-            <div className="button">
+            <div className="button" onClick={() => setTheme('dark')}>
                 <div className="circle dark"></div>
-                Dark
+                <p className='text-color'>Dark</p>
             </div>
-            <div className="button">
+            <div className="button" onClick={() => setTheme('green')}>
                 <div className="circle green"></div>
-                Green
+                <p className='text-color'>Green</p>
             </div>
-            <div className="button">
+            <div className="button" onClick={() => setTheme('yellow')}>
                 <div className="circle yellow"></div>
-                Yellow
+                <p className='text-color'>Yellow</p>
             </div>
         </div>
     </MenuStyled>
@@ -39,7 +38,7 @@ const MenuStyled = styled.div`
         margin-top: 1rem;
         padding: 1rem 2rem;
         border-radius: 10px;
-        box-shadow: 6px 5px 15px rgba(0,0,0, 0.2);
+        box-shadow: var(--box-sh);
         .button{
             display: flex;
             align-items: center;
@@ -56,6 +55,9 @@ const MenuStyled = styled.div`
                 margin-right: .3rem;
                 display: flex;
                 align-items: center;
+            }
+            .text-color{
+                color: var(--text-color);
             }
         }
     }
